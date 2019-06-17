@@ -11,11 +11,49 @@ import Foundation
 
 enum ElementReference {
     
-    enum login {
-        static let email = "login_email"
-        static let password = "login_password"
-        static let enter = "button_enter"
-        static let messageInvalidLogin = "A senha inserida é inválida ou o usuário não possui uma senha."
-        static let register = "button_register"
+    enum menu {
+        static let list = "List"
+        static let cart = "Cart"
+        static let search = "Search"
+    }
+    
+    enum cart {
+        static let tittle = "CART"
+        static let total = "Total"
+        static let price = "$0.00"
+        static let checkout = "CHECKOUT"
+        static let delete = "Delete"
+    }
+    
+    enum general {
+        static let menu = "SHOPPING APP"
+        static let list = "LIST"
+        static let card = "CART"
+        static let search = "SEARCH"
+    }
+    
+    enum item {
+        static let addCard = "ADD TO CART"
+        static let success = "Successful"
+        static let addItem = "Increment"
+    }
+    
+    enum search {
+        static let searchItem = "Search Item"
+        static let success = "Successful"
+        static let addItem = "Increment"
+    }
+    
+    enum checkout {
+        static let tittle = "CHECKOUT"
+        static let card = "XXXX XXXX XXXX XXXX"
+        static let mounth = "MM"
+        static let year = "YYYY"
+        static let cvv = "CVV"
+        static let payNow = "PAY NOW"
+        static let pay = "Pay"
+        static let thanksMEssage = "Thank you for shopping!"
+        static let orderMessage = "Your order has been placed."
+        static let keepShopping = "KEEP SHOPPING"
     }
 }

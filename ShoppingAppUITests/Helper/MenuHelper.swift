@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import XCTest
+
+class MenuHelper {
+    
+    class func accessList(app: XCUIApplication, testCase: XCTestCase) {
+        app.tables.staticTexts[ElementReference.menu.list].tap(wait: SessionManager.main.defaultTimeout, test: testCase)
+    }
+    
+    class func accessCart(app: XCUIApplication, testCase: XCTestCase) {
+        app.tables.staticTexts[ElementReference.menu.cart].tap(wait: SessionManager.main.defaultTimeout, test: testCase)
+    }
+
+    class func accessSearch(app: XCUIApplication, testCase: XCTestCase) {
+        app.tables.staticTexts[ElementReference.menu.search].tap(wait: SessionManager.main.defaultTimeout, test: testCase)
+    }
+
+}

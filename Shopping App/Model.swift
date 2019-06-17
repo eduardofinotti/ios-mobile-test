@@ -106,7 +106,10 @@ class Model: NSObject, CLLocationManagerDelegate {
                 
                 let imgURL = json[count]["image"].string!
                 
-                self.addItemToList(newProduct, imageURL: imgURL)
+                DispatchQueue.main.async {
+                    self.addItemToList(newProduct, imageURL: imgURL)
+                }
+
             }
             
         })

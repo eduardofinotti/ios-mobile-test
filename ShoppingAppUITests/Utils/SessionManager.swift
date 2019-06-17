@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class SessionManager {
+    static let main = SessionManager()
+    
+    var defaultTimeout = 20
+    
+    private init() {}
+
+}
