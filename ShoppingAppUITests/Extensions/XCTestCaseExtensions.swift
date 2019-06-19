@@ -37,6 +37,11 @@ extension XCTestCase {
             .waitForExistence(timeout: TimeInterval(SessionManager.main.defaultTimeout)))
     }
     
+    func checkAlert(app: XCUIApplication, context: String, item: String) {
+        XCTAssertTrue(app.alerts[context].staticTexts[item]
+            .waitForExistence(timeout: TimeInterval(SessionManager.main.defaultTimeout)))
+    }
+    
 }
 
 extension XCUIApplication {

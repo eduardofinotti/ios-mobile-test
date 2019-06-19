@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShoppingAppUITests/ShoppingAppUITests.swift"
-            timestampString = "582482391.576793"
+            timestampString = "582643604.6496511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "testSearchAndBuyItemWithOtherDefaultFinishMaterialQuantityInDifferentAddress()"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "testEmptyCheckou()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

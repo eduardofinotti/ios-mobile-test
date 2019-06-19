@@ -94,6 +94,7 @@
 		B1C2B8F522B283DD00F2DFD0 /* XCUIElementExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUIElementExtensions.swift; sourceTree = "<group>"; };
 		B1C2B8F722B2859F00F2DFD0 /* XCTestCaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtensions.swift; sourceTree = "<group>"; };
 		B1C2B8FA22B2863400F2DFD0 /* CartHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHelper.swift; sourceTree = "<group>"; };
+		B1F0E53422BAE3ED0037A022 /* Infos.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Infos.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +181,7 @@
 				B1C2B8EE22B2832400F2DFD0 /* Utils */,
 				B1C2B8E622B27E9D00F2DFD0 /* ShoppingAppUITests.swift */,
 				B1C2B8E822B27E9D00F2DFD0 /* Info.plist */,
+				B1F0E53422BAE3ED0037A022 /* Infos.md */,
 			);
 			path = ShoppingAppUITests;
 			sourceTree = "<group>";

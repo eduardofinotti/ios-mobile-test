@@ -24,6 +24,10 @@ class CheckoutHelper: XCTestCase  {
     
     class func payNow(app: XCUIApplication, testCase: XCTestCase) {
         app.buttons[ElementReference.checkout.payNow].tap(wait: SessionManager.main.defaultTimeout, test: testCase)
+        
+    }
+    
+    class func confirmPayment(app: XCUIApplication, testCase: XCTestCase) {
         app.sheets["Confirm Purchase"].buttons[ElementReference.checkout.pay].tap(wait: SessionManager.main.defaultTimeout, test: testCase)
     }
     
@@ -49,6 +53,16 @@ class CheckoutHelper: XCTestCase  {
         testCase.checkText(app: app, item: ElementReference.checkout.thanksMEssage)
         testCase.checkText(app: app, item: ElementReference.checkout.orderMessage)
         testCase.checkButton(app: app, item: ElementReference.checkout.keepShopping)
+    }
+    
+    class func checkEmptyCheckout(app: XCUIApplication, testCase: XCTestCase) {
+        testCase.checkText(app: app, item: ElementReference.checkout.priceZero)
+    }
+    
+    class func checkMessageEmptyCheckout(app: XCUIApplication, testCase: XCTestCase) {
+        testCase.checkAlert(app: app, context: "Error", item: "Error")
+        testCase.checkAlert(app: app, context: "Error", item: "Your cart is empty.")
+        app.alerts["Error"].buttons["Okay"].tap(wait: SessionManager.main.defaultTimeout, test: testCase)
     }
     
 }

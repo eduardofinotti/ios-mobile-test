@@ -33,7 +33,7 @@ class ItemHelper: XCTestCase  {
         XCTAssertTrue(app.segmentedControls.buttons[DataReference.secondItem.material].isSelected)
     }
     
-    class func addToCard(app: XCUIApplication, testCase: XCTestCase) {
+    class func addToCart(app: XCUIApplication, testCase: XCTestCase) {
         app.buttons[ElementReference.item.addCard].tap(wait: SessionManager.main.defaultTimeout, test: testCase)
         testCase.checkText(app: app, item: ElementReference.item.success)
     }

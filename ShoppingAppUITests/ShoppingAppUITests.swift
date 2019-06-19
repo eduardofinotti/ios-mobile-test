@@ -32,7 +32,7 @@ class ShoppingAppUITests: XCTestCase {
         MenuHelper.accessList(app: app, testCase: self)
         ListHelper.chooseItem(app: app, testCase: self, item: DataReference.defaultItem.name)
         ItemHelper.checkItemDefaultDatails(app: app, testCase: self)
-        ItemHelper.addToCard(app: app, testCase: self)
+        ItemHelper.addToCart(app: app, testCase: self)
         ItemHelper.backToList(app: app, testCase: self)
         ListHelper.backToMenu(app: app, testCase: self)
         MenuHelper.accessCart(app: app, testCase: self)
@@ -47,14 +47,14 @@ class ShoppingAppUITests: XCTestCase {
         SearchHelper.fillSearchItem(app: app, testCase: self, item: DataReference.secondItem.name)
         ListHelper.chooseItem(app: app, testCase: self, item: DataReference.secondItem.name)
         ItemHelper.checkSecondItemDatails(app: app, testCase: self)
-        ItemHelper.addToCard(app: app, testCase: self)
+        ItemHelper.addToCart(app: app, testCase: self)
         ItemHelper.backToSearch(app: app, testCase: self)
         SearchHelper.backToMenu(app: app, testCase: self)
         MenuHelper.accessSearch(app: app, testCase: self)
         SearchHelper.fillSearchItem(app: app, testCase: self, item: DataReference.defaultItem.name)
         ListHelper.chooseItem(app: app, testCase: self, item: DataReference.defaultItem.name)
         ItemHelper.checkItemDefaultDatails(app: app, testCase: self)
-        ItemHelper.addToCard(app: app, testCase: self)
+        ItemHelper.addToCart(app: app, testCase: self)
         ItemHelper.backToSearch(app: app, testCase: self)
         SearchHelper.backToMenu(app: app, testCase: self)
         MenuHelper.accessCart(app: app, testCase: self)
@@ -65,6 +65,7 @@ class ShoppingAppUITests: XCTestCase {
         CheckoutHelper.fillCreditCard(app: app, testCase: self)
         CheckoutHelper.checkCheckoutTwoItens(app: app, testCase: self)
         CheckoutHelper.payNow(app: app, testCase: self)
+        CheckoutHelper.confirmPayment(app: app, testCase: self)
         CheckoutHelper.checkCheckoutSuccess(app: app, testCase: self)
     }
     
@@ -77,7 +78,7 @@ class ShoppingAppUITests: XCTestCase {
         ItemHelper.changeDefaultFinish(app: app, testCase: self, finish: DataReference.dataChange.finish)
         ItemHelper.changeMaterial(app: app, testCase: self, material:  DataReference.dataChange.material)
         ItemHelper.addQuantity(app: app, testCase: self)
-        ItemHelper.addToCard(app: app, testCase: self)
+        ItemHelper.addToCart(app: app, testCase: self)
         ItemHelper.checkItemDefaultDatails(app: app, testCase: self)
         ItemHelper.accessCart(app: app, testCase: self, item: DataReference.defaultItem.name)
         CartHelper.checkItemDefaultDatailsInCart(app: app, testCase: self)
@@ -86,7 +87,17 @@ class ShoppingAppUITests: XCTestCase {
         CheckoutHelper.changeAddress(app: app, testCase: self)
         CheckoutHelper.checkCheckoutOneItem(app: app, testCase: self)
         CheckoutHelper.payNow(app: app, testCase: self)
+        CheckoutHelper.confirmPayment(app: app, testCase: self)
         CheckoutHelper.checkCheckoutSuccess(app: app, testCase: self)
+    }
+    
+    // Pay with emoty checkout
+    func testEmptyCheckou(){
+        MenuHelper.accessCheckout(app: app, testCase: self)
+        CheckoutHelper.fillCreditCard(app: app, testCase: self)
+        CheckoutHelper.checkEmptyCheckout(app: app, testCase: self)
+        CheckoutHelper.payNow(app: app, testCase: self)
+        CheckoutHelper.checkMessageEmptyCheckout(app: app, testCase: self)
     }
 
 }

@@ -1,0 +1,28 @@
+iOS:
+
+Para o iOS tentei reaproveitar o máximo de código possível, extraindo os steps para dentro dos Helpers, onde cada screen tem seus métodos. Assim, é possível reaproveitar as ações daquela page em qualquer teste, apenas chamando a função correspondente.
+
+Outro benefício é que quando o identificador de um botão for alterado, por exemplo, basta trocar esse identificador em apenas um lugar.
+
+Logo, os identificadores ficam no ElementReference, dentro de um Enum, agrupados por pages, assim todas as referências ficam dentro de um arquivo referência. No DataReference estão armazenados os dados que compõem os testes.
+
+Foram criadas duas extensões (extension XCTestCase e extension XCUIElement) extension XCUIElement: função tap(): aguarda até o elemento estar na tela e clica no mesmo.
+extension XCTestCase: funções para validações de textos, elementos, alertas, etc. Além do tapNotification() que faz algo quando uma notificação aparece na tela.
+
+Além do SessionManager, que pode conter algumas infos importantes para todos os testes, como por exemplo login e senha default.
+
+Antes de cada teste, no setUp(), é feito uma verificação no cart, para limpa-lo antes de começar a execução dos testes. Então, enquanto existir elementos no carrinho, será feita a exclusão.
+
+Bugs: Alguns bugs foram encontrados, como por exemplo:
+
+#1 - Preço errado no carrinho.
+
+Passos:
+- Adicionar um produto de $60.00 no carrinho, alterando a quantidade para 3
+- Acessar o checkout
+
+Resultado atual: nos detalhes do produto no checkout está sendo exibido: “3 x $180.00”.
+Resultado esperado: nos detalhes do produto no checkout exibir: “3 x $60.00”
+
+Acredito que alguns casos poderia ter feito métodos mais genéricos fazendo com que o código fosse ainda mais reaproveitado durante os testes, e ter feito outras validações durante a passagem das telas, mas fiz o máximo com o tempo que tinha disponível.
+

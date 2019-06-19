@@ -15,6 +15,7 @@ enum ElementReference {
         static let list = "List"
         static let cart = "Cart"
         static let search = "Search"
+        static let checkout = "Checkout"
     }
     
     enum cart {
@@ -55,5 +56,6 @@ enum ElementReference {
         static let thanksMEssage = "Thank you for shopping!"
         static let orderMessage = "Your order has been placed."
         static let keepShopping = "KEEP SHOPPING"
+        static let priceZero = "$0.00"
     }
 }
